@@ -1,1503 +1,3197 @@
 {
-  "name": "ddf--karlstad--demo",
-  "title": "ddf--karlstad--demo",
-  "description": "",
-  "version": "0.0.1",
-  "language": {
-    "id": "en",
-    "name": "English"
-  },
-  "translations": [],
-  "license": "",
-  "author": "",
-  "resources": [
-    {
-      "path": "ddf--concepts.csv",
-      "name": "ddf--concepts",
-      "schema": {
-        "fields": [
-          {
-            "name": "concept"
-          },
-          {
-            "name": "concept_type"
-          },
-          {
-            "name": "domain"
-          },
-          {
-            "name": "name"
-          },
-          {
-            "name": "description"
-          },
-          {
-            "name": "drill_up"
-          },
-          {
-            "name": "tags"
-          }
-        ],
-        "primaryKey": "concept"
-      }
+    "language": {
+        "name": "English",
+        "id": "en-US"
     },
-    {
-      "path": "ddf--datapoints--befolkning--by--deso--year.csv",
-      "name": "befolkning--by--deso--year",
-      "schema": {
-        "fields": [
-          {
-            "name": "deso"
-          },
-          {
-            "name": "year"
-          },
-          {
-            "name": "befolkning"
-          }
+    "created": "2024-10-30T21:35:08.938Z",
+    "resources": [
+        {
+            "name": "ddf--concepts",
+            "path": "ddf--concepts.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "concept"
+                    },
+                    {
+                        "name": "concept_type"
+                    },
+                    {
+                        "name": "domain"
+                    },
+                    {
+                        "name": "name"
+                    },
+                    {
+                        "name": "description"
+                    },
+                    {
+                        "name": "drill_up"
+                    },
+                    {
+                        "name": "tags"
+                    }
+                ],
+                "primaryKey": [
+                    "concept"
+                ]
+            }
+        },
+        {
+            "name": "ddf--entities--gender",
+            "path": "ddf--entities--gender.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "gender"
+                    },
+                    {
+                        "name": "name"
+                    }
+                ],
+                "primaryKey": [
+                    "gender"
+                ]
+            }
+        },
+        {
+            "name": "ddf--entities--geo--deso",
+            "path": "ddf--entities--geo--deso.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "deso"
+                    },
+                    {
+                        "name": "name"
+                    },
+                    {
+                        "name": "kommun"
+                    },
+                    {
+                        "name": "region"
+                    },
+                    {
+                        "name": "rike"
+                    },
+                    {
+                        "name": "deso_type"
+                    },
+                    {
+                        "name": "regso"
+                    },
+                    {
+                        "name": "is--deso"
+                    }
+                ],
+                "primaryKey": [
+                    "deso"
+                ]
+            }
+        },
+        {
+            "name": "ddf--entities--geo--kommun",
+            "path": "ddf--entities--geo--kommun.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "kommun"
+                    },
+                    {
+                        "name": "name"
+                    },
+                    {
+                        "name": "region"
+                    },
+                    {
+                        "name": "rike"
+                    },
+                    {
+                        "name": "is--kommun"
+                    }
+                ],
+                "primaryKey": [
+                    "kommun"
+                ]
+            }
+        },
+        {
+            "name": "ddf--entities--geo--region",
+            "path": "ddf--entities--geo--region.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "region"
+                    },
+                    {
+                        "name": "name"
+                    },
+                    {
+                        "name": "rike"
+                    },
+                    {
+                        "name": "is--region"
+                    }
+                ],
+                "primaryKey": [
+                    "region"
+                ]
+            }
+        },
+        {
+            "name": "ddf--entities--geo--regso",
+            "path": "ddf--entities--geo--regso.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "regso"
+                    },
+                    {
+                        "name": "name"
+                    },
+                    {
+                        "name": "kommun"
+                    },
+                    {
+                        "name": "region"
+                    },
+                    {
+                        "name": "rike"
+                    },
+                    {
+                        "name": "is--regso"
+                    }
+                ],
+                "primaryKey": [
+                    "regso"
+                ]
+            }
+        },
+        {
+            "name": "ddf--entities--geo--rike",
+            "path": "ddf--entities--geo--rike.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "rike"
+                    },
+                    {
+                        "name": "name"
+                    },
+                    {
+                        "name": "is--rike"
+                    }
+                ],
+                "primaryKey": [
+                    "rike"
+                ]
+            }
+        },
+        {
+            "name": "ddf--entities--tag",
+            "path": "ddf--entities--tag.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "tag"
+                    },
+                    {
+                        "name": "name"
+                    },
+                    {
+                        "name": "parent"
+                    }
+                ],
+                "primaryKey": [
+                    "tag"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--befolkning--by--deso--year",
+            "path": "ddf--datapoints--befolkning--by--deso--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "deso"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "befolkning"
+                    }
+                ],
+                "primaryKey": [
+                    "deso",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--befolkning--by--kommun--year",
+            "path": "ddf--datapoints--befolkning--by--kommun--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "kommun"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "befolkning"
+                    }
+                ],
+                "primaryKey": [
+                    "kommun",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--befolkning--by--regso--year",
+            "path": "ddf--datapoints--befolkning--by--regso--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "regso"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "befolkning"
+                    }
+                ],
+                "primaryKey": [
+                    "regso",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--befolkning_20_64--by--deso--year",
+            "path": "ddf--datapoints--befolkning_20_64--by--deso--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "deso"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "befolkning_20_64"
+                    }
+                ],
+                "primaryKey": [
+                    "deso",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--befolkning_20_64--by--kommun--year",
+            "path": "ddf--datapoints--befolkning_20_64--by--kommun--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "kommun"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "befolkning_20_64"
+                    }
+                ],
+                "primaryKey": [
+                    "kommun",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--befolkning_20_64--by--regso--year",
+            "path": "ddf--datapoints--befolkning_20_64--by--regso--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "regso"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "befolkning_20_64"
+                    }
+                ],
+                "primaryKey": [
+                    "regso",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--befolkning_20_65--by--deso--gender--year",
+            "path": "ddf--datapoints--befolkning_20_65--by--deso--gender--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "deso"
+                    },
+                    {
+                        "name": "gender"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "befolkning_20_65"
+                    }
+                ],
+                "primaryKey": [
+                    "deso",
+                    "gender",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--befolkning_20_65--by--deso--year",
+            "path": "ddf--datapoints--befolkning_20_65--by--deso--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "deso"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "befolkning_20_65"
+                    }
+                ],
+                "primaryKey": [
+                    "deso",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--befolkning_20_65--by--kommun--gender--year",
+            "path": "ddf--datapoints--befolkning_20_65--by--kommun--gender--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "kommun"
+                    },
+                    {
+                        "name": "gender"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "befolkning_20_65"
+                    }
+                ],
+                "primaryKey": [
+                    "kommun",
+                    "gender",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--befolkning_20_65--by--kommun--year",
+            "path": "ddf--datapoints--befolkning_20_65--by--kommun--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "kommun"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "befolkning_20_65"
+                    }
+                ],
+                "primaryKey": [
+                    "kommun",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--befolkning_20_65--by--regso--gender--year",
+            "path": "ddf--datapoints--befolkning_20_65--by--regso--gender--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "regso"
+                    },
+                    {
+                        "name": "gender"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "befolkning_20_65"
+                    }
+                ],
+                "primaryKey": [
+                    "regso",
+                    "gender",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--befolkning_20_65--by--regso--year",
+            "path": "ddf--datapoints--befolkning_20_65--by--regso--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "regso"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "befolkning_20_65"
+                    }
+                ],
+                "primaryKey": [
+                    "regso",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--befolkning_europafodda_antal--by--deso--year",
+            "path": "ddf--datapoints--befolkning_europafodda_antal--by--deso--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "deso"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "befolkning_europafodda_antal"
+                    }
+                ],
+                "primaryKey": [
+                    "deso",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--befolkning_europafodda_antal--by--kommun--year",
+            "path": "ddf--datapoints--befolkning_europafodda_antal--by--kommun--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "kommun"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "befolkning_europafodda_antal"
+                    }
+                ],
+                "primaryKey": [
+                    "kommun",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--befolkning_europafodda_antal--by--regso--year",
+            "path": "ddf--datapoints--befolkning_europafodda_antal--by--regso--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "regso"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "befolkning_europafodda_antal"
+                    }
+                ],
+                "primaryKey": [
+                    "regso",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--befolkning_europafodda_procent--by--deso--year",
+            "path": "ddf--datapoints--befolkning_europafodda_procent--by--deso--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "deso"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "befolkning_europafodda_procent"
+                    }
+                ],
+                "primaryKey": [
+                    "deso",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--befolkning_europafodda_procent--by--kommun--year",
+            "path": "ddf--datapoints--befolkning_europafodda_procent--by--kommun--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "kommun"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "befolkning_europafodda_procent"
+                    }
+                ],
+                "primaryKey": [
+                    "kommun",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--befolkning_europafodda_procent--by--regso--year",
+            "path": "ddf--datapoints--befolkning_europafodda_procent--by--regso--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "regso"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "befolkning_europafodda_procent"
+                    }
+                ],
+                "primaryKey": [
+                    "regso",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--befolkning_sverigefodda_antal--by--deso--year",
+            "path": "ddf--datapoints--befolkning_sverigefodda_antal--by--deso--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "deso"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "befolkning_sverigefodda_antal"
+                    }
+                ],
+                "primaryKey": [
+                    "deso",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--befolkning_sverigefodda_antal--by--kommun--year",
+            "path": "ddf--datapoints--befolkning_sverigefodda_antal--by--kommun--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "kommun"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "befolkning_sverigefodda_antal"
+                    }
+                ],
+                "primaryKey": [
+                    "kommun",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--befolkning_sverigefodda_antal--by--regso--year",
+            "path": "ddf--datapoints--befolkning_sverigefodda_antal--by--regso--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "regso"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "befolkning_sverigefodda_antal"
+                    }
+                ],
+                "primaryKey": [
+                    "regso",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--befolkning_sverigefodda_procent--by--deso--year",
+            "path": "ddf--datapoints--befolkning_sverigefodda_procent--by--deso--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "deso"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "befolkning_sverigefodda_procent"
+                    }
+                ],
+                "primaryKey": [
+                    "deso",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--befolkning_sverigefodda_procent--by--kommun--year",
+            "path": "ddf--datapoints--befolkning_sverigefodda_procent--by--kommun--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "kommun"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "befolkning_sverigefodda_procent"
+                    }
+                ],
+                "primaryKey": [
+                    "kommun",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--befolkning_sverigefodda_procent--by--regso--year",
+            "path": "ddf--datapoints--befolkning_sverigefodda_procent--by--regso--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "regso"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "befolkning_sverigefodda_procent"
+                    }
+                ],
+                "primaryKey": [
+                    "regso",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--befolkning_utaneuropafodda_antal--by--deso--year",
+            "path": "ddf--datapoints--befolkning_utaneuropafodda_antal--by--deso--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "deso"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "befolkning_utaneuropafodda_antal"
+                    }
+                ],
+                "primaryKey": [
+                    "deso",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--befolkning_utaneuropafodda_antal--by--kommun--year",
+            "path": "ddf--datapoints--befolkning_utaneuropafodda_antal--by--kommun--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "kommun"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "befolkning_utaneuropafodda_antal"
+                    }
+                ],
+                "primaryKey": [
+                    "kommun",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--befolkning_utaneuropafodda_antal--by--regso--year",
+            "path": "ddf--datapoints--befolkning_utaneuropafodda_antal--by--regso--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "regso"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "befolkning_utaneuropafodda_antal"
+                    }
+                ],
+                "primaryKey": [
+                    "regso",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--befolkning_utaneuropafodda_procent--by--deso--year",
+            "path": "ddf--datapoints--befolkning_utaneuropafodda_procent--by--deso--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "deso"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "befolkning_utaneuropafodda_procent"
+                    }
+                ],
+                "primaryKey": [
+                    "deso",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--befolkning_utaneuropafodda_procent--by--kommun--year",
+            "path": "ddf--datapoints--befolkning_utaneuropafodda_procent--by--kommun--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "kommun"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "befolkning_utaneuropafodda_procent"
+                    }
+                ],
+                "primaryKey": [
+                    "kommun",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--befolkning_utaneuropafodda_procent--by--regso--year",
+            "path": "ddf--datapoints--befolkning_utaneuropafodda_procent--by--regso--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "regso"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "befolkning_utaneuropafodda_procent"
+                    }
+                ],
+                "primaryKey": [
+                    "regso",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--ekstand_h_procent--by--deso--year",
+            "path": "ddf--datapoints--ekstand_h_procent--by--deso--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "deso"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "ekstand_h_procent"
+                    }
+                ],
+                "primaryKey": [
+                    "deso",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--ekstand_h_procent--by--kommun--year",
+            "path": "ddf--datapoints--ekstand_h_procent--by--kommun--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "kommun"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "ekstand_h_procent"
+                    }
+                ],
+                "primaryKey": [
+                    "kommun",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--ekstand_h_procent--by--regso--year",
+            "path": "ddf--datapoints--ekstand_h_procent--by--regso--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "regso"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "ekstand_h_procent"
+                    }
+                ],
+                "primaryKey": [
+                    "regso",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--ekstand_l_procent--by--deso--year",
+            "path": "ddf--datapoints--ekstand_l_procent--by--deso--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "deso"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "ekstand_l_procent"
+                    }
+                ],
+                "primaryKey": [
+                    "deso",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--ekstand_l_procent--by--kommun--year",
+            "path": "ddf--datapoints--ekstand_l_procent--by--kommun--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "kommun"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "ekstand_l_procent"
+                    }
+                ],
+                "primaryKey": [
+                    "kommun",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--ekstand_l_procent--by--regso--year",
+            "path": "ddf--datapoints--ekstand_l_procent--by--regso--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "regso"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "ekstand_l_procent"
+                    }
+                ],
+                "primaryKey": [
+                    "regso",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--syssel_antal--by--deso--gender--year",
+            "path": "ddf--datapoints--syssel_antal--by--deso--gender--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "deso"
+                    },
+                    {
+                        "name": "gender"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "syssel_antal"
+                    }
+                ],
+                "primaryKey": [
+                    "deso",
+                    "gender",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--syssel_antal--by--deso--year",
+            "path": "ddf--datapoints--syssel_antal--by--deso--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "deso"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "syssel_antal"
+                    }
+                ],
+                "primaryKey": [
+                    "deso",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--syssel_antal--by--kommun--gender--year",
+            "path": "ddf--datapoints--syssel_antal--by--kommun--gender--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "kommun"
+                    },
+                    {
+                        "name": "gender"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "syssel_antal"
+                    }
+                ],
+                "primaryKey": [
+                    "kommun",
+                    "gender",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--syssel_antal--by--kommun--year",
+            "path": "ddf--datapoints--syssel_antal--by--kommun--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "kommun"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "syssel_antal"
+                    }
+                ],
+                "primaryKey": [
+                    "kommun",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--syssel_antal--by--regso--gender--year",
+            "path": "ddf--datapoints--syssel_antal--by--regso--gender--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "regso"
+                    },
+                    {
+                        "name": "gender"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "syssel_antal"
+                    }
+                ],
+                "primaryKey": [
+                    "regso",
+                    "gender",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--syssel_antal--by--regso--year",
+            "path": "ddf--datapoints--syssel_antal--by--regso--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "regso"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "syssel_antal"
+                    }
+                ],
+                "primaryKey": [
+                    "regso",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--syssel_procent--by--deso--gender--year",
+            "path": "ddf--datapoints--syssel_procent--by--deso--gender--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "deso"
+                    },
+                    {
+                        "name": "gender"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "syssel_procent"
+                    }
+                ],
+                "primaryKey": [
+                    "deso",
+                    "gender",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--syssel_procent--by--deso--year",
+            "path": "ddf--datapoints--syssel_procent--by--deso--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "deso"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "syssel_procent"
+                    }
+                ],
+                "primaryKey": [
+                    "deso",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--syssel_procent--by--kommun--gender--year",
+            "path": "ddf--datapoints--syssel_procent--by--kommun--gender--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "kommun"
+                    },
+                    {
+                        "name": "gender"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "syssel_procent"
+                    }
+                ],
+                "primaryKey": [
+                    "kommun",
+                    "gender",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--syssel_procent--by--kommun--year",
+            "path": "ddf--datapoints--syssel_procent--by--kommun--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "kommun"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "syssel_procent"
+                    }
+                ],
+                "primaryKey": [
+                    "kommun",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--syssel_procent--by--regso--gender--year",
+            "path": "ddf--datapoints--syssel_procent--by--regso--gender--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "regso"
+                    },
+                    {
+                        "name": "gender"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "syssel_procent"
+                    }
+                ],
+                "primaryKey": [
+                    "regso",
+                    "gender",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--syssel_procent--by--regso--year",
+            "path": "ddf--datapoints--syssel_procent--by--regso--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "regso"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "syssel_procent"
+                    }
+                ],
+                "primaryKey": [
+                    "regso",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--uppform_aganderatt_antal--by--deso--year",
+            "path": "ddf--datapoints--uppform_aganderatt_antal--by--deso--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "deso"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "uppform_aganderatt_antal"
+                    }
+                ],
+                "primaryKey": [
+                    "deso",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--uppform_aganderatt_antal--by--kommun--year",
+            "path": "ddf--datapoints--uppform_aganderatt_antal--by--kommun--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "kommun"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "uppform_aganderatt_antal"
+                    }
+                ],
+                "primaryKey": [
+                    "kommun",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--uppform_aganderatt_antal--by--regso--year",
+            "path": "ddf--datapoints--uppform_aganderatt_antal--by--regso--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "regso"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "uppform_aganderatt_antal"
+                    }
+                ],
+                "primaryKey": [
+                    "regso",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--uppform_aganderatt_procent--by--deso--year",
+            "path": "ddf--datapoints--uppform_aganderatt_procent--by--deso--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "deso"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "uppform_aganderatt_procent"
+                    }
+                ],
+                "primaryKey": [
+                    "deso",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--uppform_aganderatt_procent--by--kommun--year",
+            "path": "ddf--datapoints--uppform_aganderatt_procent--by--kommun--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "kommun"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "uppform_aganderatt_procent"
+                    }
+                ],
+                "primaryKey": [
+                    "kommun",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--uppform_aganderatt_procent--by--regso--year",
+            "path": "ddf--datapoints--uppform_aganderatt_procent--by--regso--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "regso"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "uppform_aganderatt_procent"
+                    }
+                ],
+                "primaryKey": [
+                    "regso",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--uppform_bostadsratt_antal--by--deso--year",
+            "path": "ddf--datapoints--uppform_bostadsratt_antal--by--deso--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "deso"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "uppform_bostadsratt_antal"
+                    }
+                ],
+                "primaryKey": [
+                    "deso",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--uppform_bostadsratt_antal--by--kommun--year",
+            "path": "ddf--datapoints--uppform_bostadsratt_antal--by--kommun--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "kommun"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "uppform_bostadsratt_antal"
+                    }
+                ],
+                "primaryKey": [
+                    "kommun",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--uppform_bostadsratt_antal--by--regso--year",
+            "path": "ddf--datapoints--uppform_bostadsratt_antal--by--regso--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "regso"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "uppform_bostadsratt_antal"
+                    }
+                ],
+                "primaryKey": [
+                    "regso",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--uppform_bostadsratt_procent--by--deso--year",
+            "path": "ddf--datapoints--uppform_bostadsratt_procent--by--deso--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "deso"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "uppform_bostadsratt_procent"
+                    }
+                ],
+                "primaryKey": [
+                    "deso",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--uppform_bostadsratt_procent--by--kommun--year",
+            "path": "ddf--datapoints--uppform_bostadsratt_procent--by--kommun--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "kommun"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "uppform_bostadsratt_procent"
+                    }
+                ],
+                "primaryKey": [
+                    "kommun",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--uppform_bostadsratt_procent--by--regso--year",
+            "path": "ddf--datapoints--uppform_bostadsratt_procent--by--regso--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "regso"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "uppform_bostadsratt_procent"
+                    }
+                ],
+                "primaryKey": [
+                    "regso",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--uppform_hyresratt_antal--by--deso--year",
+            "path": "ddf--datapoints--uppform_hyresratt_antal--by--deso--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "deso"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "uppform_hyresratt_antal"
+                    }
+                ],
+                "primaryKey": [
+                    "deso",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--uppform_hyresratt_antal--by--kommun--year",
+            "path": "ddf--datapoints--uppform_hyresratt_antal--by--kommun--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "kommun"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "uppform_hyresratt_antal"
+                    }
+                ],
+                "primaryKey": [
+                    "kommun",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--uppform_hyresratt_antal--by--regso--year",
+            "path": "ddf--datapoints--uppform_hyresratt_antal--by--regso--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "regso"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "uppform_hyresratt_antal"
+                    }
+                ],
+                "primaryKey": [
+                    "regso",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--uppform_hyresratt_procent--by--deso--year",
+            "path": "ddf--datapoints--uppform_hyresratt_procent--by--deso--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "deso"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "uppform_hyresratt_procent"
+                    }
+                ],
+                "primaryKey": [
+                    "deso",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--uppform_hyresratt_procent--by--kommun--year",
+            "path": "ddf--datapoints--uppform_hyresratt_procent--by--kommun--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "kommun"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "uppform_hyresratt_procent"
+                    }
+                ],
+                "primaryKey": [
+                    "kommun",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--uppform_hyresratt_procent--by--regso--year",
+            "path": "ddf--datapoints--uppform_hyresratt_procent--by--regso--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "regso"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "uppform_hyresratt_procent"
+                    }
+                ],
+                "primaryKey": [
+                    "regso",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--uppform_uppgiftsaknas_antal--by--deso--year",
+            "path": "ddf--datapoints--uppform_uppgiftsaknas_antal--by--deso--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "deso"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "uppform_uppgiftsaknas_antal"
+                    }
+                ],
+                "primaryKey": [
+                    "deso",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--uppform_uppgiftsaknas_antal--by--kommun--year",
+            "path": "ddf--datapoints--uppform_uppgiftsaknas_antal--by--kommun--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "kommun"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "uppform_uppgiftsaknas_antal"
+                    }
+                ],
+                "primaryKey": [
+                    "kommun",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--uppform_uppgiftsaknas_antal--by--regso--year",
+            "path": "ddf--datapoints--uppform_uppgiftsaknas_antal--by--regso--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "regso"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "uppform_uppgiftsaknas_antal"
+                    }
+                ],
+                "primaryKey": [
+                    "regso",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--uppform_uppgiftsaknas_procent--by--deso--year",
+            "path": "ddf--datapoints--uppform_uppgiftsaknas_procent--by--deso--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "deso"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "uppform_uppgiftsaknas_procent"
+                    }
+                ],
+                "primaryKey": [
+                    "deso",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--uppform_uppgiftsaknas_procent--by--kommun--year",
+            "path": "ddf--datapoints--uppform_uppgiftsaknas_procent--by--kommun--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "kommun"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "uppform_uppgiftsaknas_procent"
+                    }
+                ],
+                "primaryKey": [
+                    "kommun",
+                    "year"
+                ]
+            }
+        },
+        {
+            "name": "ddf--datapoints--uppform_uppgiftsaknas_procent--by--regso--year",
+            "path": "ddf--datapoints--uppform_uppgiftsaknas_procent--by--regso--year.csv",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "regso"
+                    },
+                    {
+                        "name": "year"
+                    },
+                    {
+                        "name": "uppform_uppgiftsaknas_procent"
+                    }
+                ],
+                "primaryKey": [
+                    "regso",
+                    "year"
+                ]
+            }
+        }
+    ],
+    "ddfSchema": {
+        "concepts": [
+            {
+                "primaryKey": [
+                    "concept"
+                ],
+                "value": "concept_type",
+                "resources": [
+                    "ddf--concepts"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "concept"
+                ],
+                "value": "description",
+                "resources": [
+                    "ddf--concepts"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "concept"
+                ],
+                "value": "domain",
+                "resources": [
+                    "ddf--concepts"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "concept"
+                ],
+                "value": "drill_up",
+                "resources": [
+                    "ddf--concepts"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "concept"
+                ],
+                "value": "name",
+                "resources": [
+                    "ddf--concepts"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "concept"
+                ],
+                "value": "tags",
+                "resources": [
+                    "ddf--concepts"
+                ]
+            }
         ],
-        "primaryKey": [
-          "deso",
-          "year"
-        ]
-      }
-    },
-    {
-      "path": "ddf--datapoints--befolkning_20_64--by--deso--year.csv",
-      "name": "befolkning_20_64--by--deso--year",
-      "schema": {
-        "fields": [
-          {
-            "name": "deso"
-          },
-          {
-            "name": "year"
-          },
-          {
-            "name": "befolkning_20_64"
-          }
+        "entities": [
+            {
+                "primaryKey": [
+                    "deso"
+                ],
+                "value": "deso_type",
+                "resources": [
+                    "ddf--entities--geo--deso"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "deso"
+                ],
+                "value": "is--deso",
+                "resources": [
+                    "ddf--entities--geo--deso"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "deso"
+                ],
+                "value": "kommun",
+                "resources": [
+                    "ddf--entities--geo--deso"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "deso"
+                ],
+                "value": "name",
+                "resources": [
+                    "ddf--entities--geo--deso"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "deso"
+                ],
+                "value": "region",
+                "resources": [
+                    "ddf--entities--geo--deso"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "deso"
+                ],
+                "value": "regso",
+                "resources": [
+                    "ddf--entities--geo--deso"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "deso"
+                ],
+                "value": "rike",
+                "resources": [
+                    "ddf--entities--geo--deso"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "gender"
+                ],
+                "value": "name",
+                "resources": [
+                    "ddf--entities--gender"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo"
+                ],
+                "value": "deso_type",
+                "resources": [
+                    "ddf--entities--geo--deso"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo"
+                ],
+                "value": "is--deso",
+                "resources": [
+                    "ddf--entities--geo--deso"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo"
+                ],
+                "value": "is--kommun",
+                "resources": [
+                    "ddf--entities--geo--kommun"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo"
+                ],
+                "value": "is--region",
+                "resources": [
+                    "ddf--entities--geo--region"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo"
+                ],
+                "value": "is--regso",
+                "resources": [
+                    "ddf--entities--geo--regso"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo"
+                ],
+                "value": "is--rike",
+                "resources": [
+                    "ddf--entities--geo--rike"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo"
+                ],
+                "value": "kommun",
+                "resources": [
+                    "ddf--entities--geo--regso",
+                    "ddf--entities--geo--deso"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo"
+                ],
+                "value": "name",
+                "resources": [
+                    "ddf--entities--geo--rike",
+                    "ddf--entities--geo--regso",
+                    "ddf--entities--geo--region",
+                    "ddf--entities--geo--kommun",
+                    "ddf--entities--geo--deso"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo"
+                ],
+                "value": "region",
+                "resources": [
+                    "ddf--entities--geo--regso",
+                    "ddf--entities--geo--kommun",
+                    "ddf--entities--geo--deso"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo"
+                ],
+                "value": "regso",
+                "resources": [
+                    "ddf--entities--geo--deso"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo"
+                ],
+                "value": "rike",
+                "resources": [
+                    "ddf--entities--geo--regso",
+                    "ddf--entities--geo--region",
+                    "ddf--entities--geo--kommun",
+                    "ddf--entities--geo--deso"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "kommun"
+                ],
+                "value": "is--kommun",
+                "resources": [
+                    "ddf--entities--geo--kommun"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "kommun"
+                ],
+                "value": "name",
+                "resources": [
+                    "ddf--entities--geo--kommun"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "kommun"
+                ],
+                "value": "region",
+                "resources": [
+                    "ddf--entities--geo--kommun"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "kommun"
+                ],
+                "value": "rike",
+                "resources": [
+                    "ddf--entities--geo--kommun"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "region"
+                ],
+                "value": "is--region",
+                "resources": [
+                    "ddf--entities--geo--region"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "region"
+                ],
+                "value": "name",
+                "resources": [
+                    "ddf--entities--geo--region"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "region"
+                ],
+                "value": "rike",
+                "resources": [
+                    "ddf--entities--geo--region"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "regso"
+                ],
+                "value": "is--regso",
+                "resources": [
+                    "ddf--entities--geo--regso"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "regso"
+                ],
+                "value": "kommun",
+                "resources": [
+                    "ddf--entities--geo--regso"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "regso"
+                ],
+                "value": "name",
+                "resources": [
+                    "ddf--entities--geo--regso"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "regso"
+                ],
+                "value": "region",
+                "resources": [
+                    "ddf--entities--geo--regso"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "regso"
+                ],
+                "value": "rike",
+                "resources": [
+                    "ddf--entities--geo--regso"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "rike"
+                ],
+                "value": "is--rike",
+                "resources": [
+                    "ddf--entities--geo--rike"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "rike"
+                ],
+                "value": "name",
+                "resources": [
+                    "ddf--entities--geo--rike"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "tag"
+                ],
+                "value": "name",
+                "resources": [
+                    "ddf--entities--tag"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "tag"
+                ],
+                "value": "parent",
+                "resources": [
+                    "ddf--entities--tag"
+                ]
+            }
         ],
-        "primaryKey": [
-          "deso",
-          "year"
-        ]
-      }
-    },
-    {
-      "path": "ddf--datapoints--befolkning_europafodda_antal--by--deso--year.csv",
-      "name": "befolkning_europafodda_antal--by--deso--year",
-      "schema": {
-        "fields": [
-          {
-            "name": "deso"
-          },
-          {
-            "name": "year"
-          },
-          {
-            "name": "befolkning_europafodda_antal"
-          }
+        "datapoints": [
+            {
+                "primaryKey": [
+                    "deso",
+                    "gender",
+                    "year"
+                ],
+                "value": "befolkning_20_65",
+                "resources": [
+                    "ddf--datapoints--befolkning_20_65--by--deso--gender--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "deso",
+                    "gender",
+                    "year"
+                ],
+                "value": "syssel_antal",
+                "resources": [
+                    "ddf--datapoints--syssel_antal--by--deso--gender--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "deso",
+                    "gender",
+                    "year"
+                ],
+                "value": "syssel_procent",
+                "resources": [
+                    "ddf--datapoints--syssel_procent--by--deso--gender--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "deso",
+                    "year"
+                ],
+                "value": "befolkning",
+                "resources": [
+                    "ddf--datapoints--befolkning--by--deso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "deso",
+                    "year"
+                ],
+                "value": "befolkning_20_64",
+                "resources": [
+                    "ddf--datapoints--befolkning_20_64--by--deso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "deso",
+                    "year"
+                ],
+                "value": "befolkning_20_65",
+                "resources": [
+                    "ddf--datapoints--befolkning_20_65--by--deso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "deso",
+                    "year"
+                ],
+                "value": "befolkning_europafodda_antal",
+                "resources": [
+                    "ddf--datapoints--befolkning_europafodda_antal--by--deso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "deso",
+                    "year"
+                ],
+                "value": "befolkning_europafodda_procent",
+                "resources": [
+                    "ddf--datapoints--befolkning_europafodda_procent--by--deso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "deso",
+                    "year"
+                ],
+                "value": "befolkning_sverigefodda_antal",
+                "resources": [
+                    "ddf--datapoints--befolkning_sverigefodda_antal--by--deso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "deso",
+                    "year"
+                ],
+                "value": "befolkning_sverigefodda_procent",
+                "resources": [
+                    "ddf--datapoints--befolkning_sverigefodda_procent--by--deso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "deso",
+                    "year"
+                ],
+                "value": "befolkning_utaneuropafodda_antal",
+                "resources": [
+                    "ddf--datapoints--befolkning_utaneuropafodda_antal--by--deso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "deso",
+                    "year"
+                ],
+                "value": "befolkning_utaneuropafodda_procent",
+                "resources": [
+                    "ddf--datapoints--befolkning_utaneuropafodda_procent--by--deso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "deso",
+                    "year"
+                ],
+                "value": "ekstand_h_procent",
+                "resources": [
+                    "ddf--datapoints--ekstand_h_procent--by--deso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "deso",
+                    "year"
+                ],
+                "value": "ekstand_l_procent",
+                "resources": [
+                    "ddf--datapoints--ekstand_l_procent--by--deso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "deso",
+                    "year"
+                ],
+                "value": "syssel_antal",
+                "resources": [
+                    "ddf--datapoints--syssel_antal--by--deso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "deso",
+                    "year"
+                ],
+                "value": "syssel_procent",
+                "resources": [
+                    "ddf--datapoints--syssel_procent--by--deso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "deso",
+                    "year"
+                ],
+                "value": "uppform_aganderatt_antal",
+                "resources": [
+                    "ddf--datapoints--uppform_aganderatt_antal--by--deso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "deso",
+                    "year"
+                ],
+                "value": "uppform_aganderatt_procent",
+                "resources": [
+                    "ddf--datapoints--uppform_aganderatt_procent--by--deso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "deso",
+                    "year"
+                ],
+                "value": "uppform_bostadsratt_antal",
+                "resources": [
+                    "ddf--datapoints--uppform_bostadsratt_antal--by--deso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "deso",
+                    "year"
+                ],
+                "value": "uppform_bostadsratt_procent",
+                "resources": [
+                    "ddf--datapoints--uppform_bostadsratt_procent--by--deso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "deso",
+                    "year"
+                ],
+                "value": "uppform_hyresratt_antal",
+                "resources": [
+                    "ddf--datapoints--uppform_hyresratt_antal--by--deso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "deso",
+                    "year"
+                ],
+                "value": "uppform_hyresratt_procent",
+                "resources": [
+                    "ddf--datapoints--uppform_hyresratt_procent--by--deso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "deso",
+                    "year"
+                ],
+                "value": "uppform_uppgiftsaknas_antal",
+                "resources": [
+                    "ddf--datapoints--uppform_uppgiftsaknas_antal--by--deso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "deso",
+                    "year"
+                ],
+                "value": "uppform_uppgiftsaknas_procent",
+                "resources": [
+                    "ddf--datapoints--uppform_uppgiftsaknas_procent--by--deso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "gender",
+                    "geo",
+                    "year"
+                ],
+                "value": "befolkning_20_65",
+                "resources": [
+                    "ddf--datapoints--befolkning_20_65--by--regso--gender--year",
+                    "ddf--datapoints--befolkning_20_65--by--kommun--gender--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "gender",
+                    "geo",
+                    "year"
+                ],
+                "value": "syssel_antal",
+                "resources": [
+                    "ddf--datapoints--syssel_antal--by--regso--gender--year",
+                    "ddf--datapoints--syssel_antal--by--kommun--gender--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "gender",
+                    "geo",
+                    "year"
+                ],
+                "value": "syssel_procent",
+                "resources": [
+                    "ddf--datapoints--syssel_procent--by--regso--gender--year",
+                    "ddf--datapoints--syssel_procent--by--kommun--gender--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "gender",
+                    "kommun",
+                    "year"
+                ],
+                "value": "befolkning_20_65",
+                "resources": [
+                    "ddf--datapoints--befolkning_20_65--by--kommun--gender--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "gender",
+                    "kommun",
+                    "year"
+                ],
+                "value": "syssel_antal",
+                "resources": [
+                    "ddf--datapoints--syssel_antal--by--kommun--gender--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "gender",
+                    "kommun",
+                    "year"
+                ],
+                "value": "syssel_procent",
+                "resources": [
+                    "ddf--datapoints--syssel_procent--by--kommun--gender--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "gender",
+                    "regso",
+                    "year"
+                ],
+                "value": "befolkning_20_65",
+                "resources": [
+                    "ddf--datapoints--befolkning_20_65--by--regso--gender--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "gender",
+                    "regso",
+                    "year"
+                ],
+                "value": "syssel_antal",
+                "resources": [
+                    "ddf--datapoints--syssel_antal--by--regso--gender--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "gender",
+                    "regso",
+                    "year"
+                ],
+                "value": "syssel_procent",
+                "resources": [
+                    "ddf--datapoints--syssel_procent--by--regso--gender--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "gender",
+                    "year"
+                ],
+                "value": "befolkning_20_65",
+                "resources": [
+                    "ddf--datapoints--befolkning_20_65--by--deso--gender--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "gender",
+                    "year"
+                ],
+                "value": "syssel_antal",
+                "resources": [
+                    "ddf--datapoints--syssel_antal--by--deso--gender--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "gender",
+                    "year"
+                ],
+                "value": "syssel_procent",
+                "resources": [
+                    "ddf--datapoints--syssel_procent--by--deso--gender--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "year"
+                ],
+                "value": "befolkning",
+                "resources": [
+                    "ddf--datapoints--befolkning--by--regso--year",
+                    "ddf--datapoints--befolkning--by--kommun--year",
+                    "ddf--datapoints--befolkning--by--deso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "year"
+                ],
+                "value": "befolkning_20_64",
+                "resources": [
+                    "ddf--datapoints--befolkning_20_64--by--regso--year",
+                    "ddf--datapoints--befolkning_20_64--by--kommun--year",
+                    "ddf--datapoints--befolkning_20_64--by--deso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "year"
+                ],
+                "value": "befolkning_20_65",
+                "resources": [
+                    "ddf--datapoints--befolkning_20_65--by--regso--year",
+                    "ddf--datapoints--befolkning_20_65--by--kommun--year",
+                    "ddf--datapoints--befolkning_20_65--by--deso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "year"
+                ],
+                "value": "befolkning_europafodda_antal",
+                "resources": [
+                    "ddf--datapoints--befolkning_europafodda_antal--by--regso--year",
+                    "ddf--datapoints--befolkning_europafodda_antal--by--kommun--year",
+                    "ddf--datapoints--befolkning_europafodda_antal--by--deso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "year"
+                ],
+                "value": "befolkning_europafodda_procent",
+                "resources": [
+                    "ddf--datapoints--befolkning_europafodda_procent--by--regso--year",
+                    "ddf--datapoints--befolkning_europafodda_procent--by--kommun--year",
+                    "ddf--datapoints--befolkning_europafodda_procent--by--deso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "year"
+                ],
+                "value": "befolkning_sverigefodda_antal",
+                "resources": [
+                    "ddf--datapoints--befolkning_sverigefodda_antal--by--regso--year",
+                    "ddf--datapoints--befolkning_sverigefodda_antal--by--kommun--year",
+                    "ddf--datapoints--befolkning_sverigefodda_antal--by--deso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "year"
+                ],
+                "value": "befolkning_sverigefodda_procent",
+                "resources": [
+                    "ddf--datapoints--befolkning_sverigefodda_procent--by--regso--year",
+                    "ddf--datapoints--befolkning_sverigefodda_procent--by--kommun--year",
+                    "ddf--datapoints--befolkning_sverigefodda_procent--by--deso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "year"
+                ],
+                "value": "befolkning_utaneuropafodda_antal",
+                "resources": [
+                    "ddf--datapoints--befolkning_utaneuropafodda_antal--by--regso--year",
+                    "ddf--datapoints--befolkning_utaneuropafodda_antal--by--kommun--year",
+                    "ddf--datapoints--befolkning_utaneuropafodda_antal--by--deso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "year"
+                ],
+                "value": "befolkning_utaneuropafodda_procent",
+                "resources": [
+                    "ddf--datapoints--befolkning_utaneuropafodda_procent--by--regso--year",
+                    "ddf--datapoints--befolkning_utaneuropafodda_procent--by--kommun--year",
+                    "ddf--datapoints--befolkning_utaneuropafodda_procent--by--deso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "year"
+                ],
+                "value": "ekstand_h_procent",
+                "resources": [
+                    "ddf--datapoints--ekstand_h_procent--by--regso--year",
+                    "ddf--datapoints--ekstand_h_procent--by--kommun--year",
+                    "ddf--datapoints--ekstand_h_procent--by--deso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "year"
+                ],
+                "value": "ekstand_l_procent",
+                "resources": [
+                    "ddf--datapoints--ekstand_l_procent--by--regso--year",
+                    "ddf--datapoints--ekstand_l_procent--by--kommun--year",
+                    "ddf--datapoints--ekstand_l_procent--by--deso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "year"
+                ],
+                "value": "syssel_antal",
+                "resources": [
+                    "ddf--datapoints--syssel_antal--by--regso--year",
+                    "ddf--datapoints--syssel_antal--by--kommun--year",
+                    "ddf--datapoints--syssel_antal--by--deso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "year"
+                ],
+                "value": "syssel_procent",
+                "resources": [
+                    "ddf--datapoints--syssel_procent--by--regso--year",
+                    "ddf--datapoints--syssel_procent--by--kommun--year",
+                    "ddf--datapoints--syssel_procent--by--deso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "year"
+                ],
+                "value": "uppform_aganderatt_antal",
+                "resources": [
+                    "ddf--datapoints--uppform_aganderatt_antal--by--regso--year",
+                    "ddf--datapoints--uppform_aganderatt_antal--by--kommun--year",
+                    "ddf--datapoints--uppform_aganderatt_antal--by--deso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "year"
+                ],
+                "value": "uppform_aganderatt_procent",
+                "resources": [
+                    "ddf--datapoints--uppform_aganderatt_procent--by--regso--year",
+                    "ddf--datapoints--uppform_aganderatt_procent--by--kommun--year",
+                    "ddf--datapoints--uppform_aganderatt_procent--by--deso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "year"
+                ],
+                "value": "uppform_bostadsratt_antal",
+                "resources": [
+                    "ddf--datapoints--uppform_bostadsratt_antal--by--regso--year",
+                    "ddf--datapoints--uppform_bostadsratt_antal--by--kommun--year",
+                    "ddf--datapoints--uppform_bostadsratt_antal--by--deso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "year"
+                ],
+                "value": "uppform_bostadsratt_procent",
+                "resources": [
+                    "ddf--datapoints--uppform_bostadsratt_procent--by--regso--year",
+                    "ddf--datapoints--uppform_bostadsratt_procent--by--kommun--year",
+                    "ddf--datapoints--uppform_bostadsratt_procent--by--deso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "year"
+                ],
+                "value": "uppform_hyresratt_antal",
+                "resources": [
+                    "ddf--datapoints--uppform_hyresratt_antal--by--regso--year",
+                    "ddf--datapoints--uppform_hyresratt_antal--by--kommun--year",
+                    "ddf--datapoints--uppform_hyresratt_antal--by--deso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "year"
+                ],
+                "value": "uppform_hyresratt_procent",
+                "resources": [
+                    "ddf--datapoints--uppform_hyresratt_procent--by--regso--year",
+                    "ddf--datapoints--uppform_hyresratt_procent--by--kommun--year",
+                    "ddf--datapoints--uppform_hyresratt_procent--by--deso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "year"
+                ],
+                "value": "uppform_uppgiftsaknas_antal",
+                "resources": [
+                    "ddf--datapoints--uppform_uppgiftsaknas_antal--by--regso--year",
+                    "ddf--datapoints--uppform_uppgiftsaknas_antal--by--kommun--year",
+                    "ddf--datapoints--uppform_uppgiftsaknas_antal--by--deso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "geo",
+                    "year"
+                ],
+                "value": "uppform_uppgiftsaknas_procent",
+                "resources": [
+                    "ddf--datapoints--uppform_uppgiftsaknas_procent--by--regso--year",
+                    "ddf--datapoints--uppform_uppgiftsaknas_procent--by--kommun--year",
+                    "ddf--datapoints--uppform_uppgiftsaknas_procent--by--deso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "kommun",
+                    "year"
+                ],
+                "value": "befolkning",
+                "resources": [
+                    "ddf--datapoints--befolkning--by--kommun--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "kommun",
+                    "year"
+                ],
+                "value": "befolkning_20_64",
+                "resources": [
+                    "ddf--datapoints--befolkning_20_64--by--kommun--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "kommun",
+                    "year"
+                ],
+                "value": "befolkning_20_65",
+                "resources": [
+                    "ddf--datapoints--befolkning_20_65--by--kommun--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "kommun",
+                    "year"
+                ],
+                "value": "befolkning_europafodda_antal",
+                "resources": [
+                    "ddf--datapoints--befolkning_europafodda_antal--by--kommun--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "kommun",
+                    "year"
+                ],
+                "value": "befolkning_europafodda_procent",
+                "resources": [
+                    "ddf--datapoints--befolkning_europafodda_procent--by--kommun--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "kommun",
+                    "year"
+                ],
+                "value": "befolkning_sverigefodda_antal",
+                "resources": [
+                    "ddf--datapoints--befolkning_sverigefodda_antal--by--kommun--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "kommun",
+                    "year"
+                ],
+                "value": "befolkning_sverigefodda_procent",
+                "resources": [
+                    "ddf--datapoints--befolkning_sverigefodda_procent--by--kommun--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "kommun",
+                    "year"
+                ],
+                "value": "befolkning_utaneuropafodda_antal",
+                "resources": [
+                    "ddf--datapoints--befolkning_utaneuropafodda_antal--by--kommun--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "kommun",
+                    "year"
+                ],
+                "value": "befolkning_utaneuropafodda_procent",
+                "resources": [
+                    "ddf--datapoints--befolkning_utaneuropafodda_procent--by--kommun--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "kommun",
+                    "year"
+                ],
+                "value": "ekstand_h_procent",
+                "resources": [
+                    "ddf--datapoints--ekstand_h_procent--by--kommun--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "kommun",
+                    "year"
+                ],
+                "value": "ekstand_l_procent",
+                "resources": [
+                    "ddf--datapoints--ekstand_l_procent--by--kommun--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "kommun",
+                    "year"
+                ],
+                "value": "syssel_antal",
+                "resources": [
+                    "ddf--datapoints--syssel_antal--by--kommun--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "kommun",
+                    "year"
+                ],
+                "value": "syssel_procent",
+                "resources": [
+                    "ddf--datapoints--syssel_procent--by--kommun--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "kommun",
+                    "year"
+                ],
+                "value": "uppform_aganderatt_antal",
+                "resources": [
+                    "ddf--datapoints--uppform_aganderatt_antal--by--kommun--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "kommun",
+                    "year"
+                ],
+                "value": "uppform_aganderatt_procent",
+                "resources": [
+                    "ddf--datapoints--uppform_aganderatt_procent--by--kommun--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "kommun",
+                    "year"
+                ],
+                "value": "uppform_bostadsratt_antal",
+                "resources": [
+                    "ddf--datapoints--uppform_bostadsratt_antal--by--kommun--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "kommun",
+                    "year"
+                ],
+                "value": "uppform_bostadsratt_procent",
+                "resources": [
+                    "ddf--datapoints--uppform_bostadsratt_procent--by--kommun--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "kommun",
+                    "year"
+                ],
+                "value": "uppform_hyresratt_antal",
+                "resources": [
+                    "ddf--datapoints--uppform_hyresratt_antal--by--kommun--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "kommun",
+                    "year"
+                ],
+                "value": "uppform_hyresratt_procent",
+                "resources": [
+                    "ddf--datapoints--uppform_hyresratt_procent--by--kommun--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "kommun",
+                    "year"
+                ],
+                "value": "uppform_uppgiftsaknas_antal",
+                "resources": [
+                    "ddf--datapoints--uppform_uppgiftsaknas_antal--by--kommun--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "kommun",
+                    "year"
+                ],
+                "value": "uppform_uppgiftsaknas_procent",
+                "resources": [
+                    "ddf--datapoints--uppform_uppgiftsaknas_procent--by--kommun--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "regso",
+                    "year"
+                ],
+                "value": "befolkning",
+                "resources": [
+                    "ddf--datapoints--befolkning--by--regso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "regso",
+                    "year"
+                ],
+                "value": "befolkning_20_64",
+                "resources": [
+                    "ddf--datapoints--befolkning_20_64--by--regso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "regso",
+                    "year"
+                ],
+                "value": "befolkning_20_65",
+                "resources": [
+                    "ddf--datapoints--befolkning_20_65--by--regso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "regso",
+                    "year"
+                ],
+                "value": "befolkning_europafodda_antal",
+                "resources": [
+                    "ddf--datapoints--befolkning_europafodda_antal--by--regso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "regso",
+                    "year"
+                ],
+                "value": "befolkning_europafodda_procent",
+                "resources": [
+                    "ddf--datapoints--befolkning_europafodda_procent--by--regso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "regso",
+                    "year"
+                ],
+                "value": "befolkning_sverigefodda_antal",
+                "resources": [
+                    "ddf--datapoints--befolkning_sverigefodda_antal--by--regso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "regso",
+                    "year"
+                ],
+                "value": "befolkning_sverigefodda_procent",
+                "resources": [
+                    "ddf--datapoints--befolkning_sverigefodda_procent--by--regso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "regso",
+                    "year"
+                ],
+                "value": "befolkning_utaneuropafodda_antal",
+                "resources": [
+                    "ddf--datapoints--befolkning_utaneuropafodda_antal--by--regso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "regso",
+                    "year"
+                ],
+                "value": "befolkning_utaneuropafodda_procent",
+                "resources": [
+                    "ddf--datapoints--befolkning_utaneuropafodda_procent--by--regso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "regso",
+                    "year"
+                ],
+                "value": "ekstand_h_procent",
+                "resources": [
+                    "ddf--datapoints--ekstand_h_procent--by--regso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "regso",
+                    "year"
+                ],
+                "value": "ekstand_l_procent",
+                "resources": [
+                    "ddf--datapoints--ekstand_l_procent--by--regso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "regso",
+                    "year"
+                ],
+                "value": "syssel_antal",
+                "resources": [
+                    "ddf--datapoints--syssel_antal--by--regso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "regso",
+                    "year"
+                ],
+                "value": "syssel_procent",
+                "resources": [
+                    "ddf--datapoints--syssel_procent--by--regso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "regso",
+                    "year"
+                ],
+                "value": "uppform_aganderatt_antal",
+                "resources": [
+                    "ddf--datapoints--uppform_aganderatt_antal--by--regso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "regso",
+                    "year"
+                ],
+                "value": "uppform_aganderatt_procent",
+                "resources": [
+                    "ddf--datapoints--uppform_aganderatt_procent--by--regso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "regso",
+                    "year"
+                ],
+                "value": "uppform_bostadsratt_antal",
+                "resources": [
+                    "ddf--datapoints--uppform_bostadsratt_antal--by--regso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "regso",
+                    "year"
+                ],
+                "value": "uppform_bostadsratt_procent",
+                "resources": [
+                    "ddf--datapoints--uppform_bostadsratt_procent--by--regso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "regso",
+                    "year"
+                ],
+                "value": "uppform_hyresratt_antal",
+                "resources": [
+                    "ddf--datapoints--uppform_hyresratt_antal--by--regso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "regso",
+                    "year"
+                ],
+                "value": "uppform_hyresratt_procent",
+                "resources": [
+                    "ddf--datapoints--uppform_hyresratt_procent--by--regso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "regso",
+                    "year"
+                ],
+                "value": "uppform_uppgiftsaknas_antal",
+                "resources": [
+                    "ddf--datapoints--uppform_uppgiftsaknas_antal--by--regso--year"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "regso",
+                    "year"
+                ],
+                "value": "uppform_uppgiftsaknas_procent",
+                "resources": [
+                    "ddf--datapoints--uppform_uppgiftsaknas_procent--by--regso--year"
+                ]
+            }
         ],
-        "primaryKey": [
-          "deso",
-          "year"
-        ]
-      }
-    },
-    {
-      "path": "ddf--datapoints--befolkning_europafodda_procent--by--deso--year.csv",
-      "name": "befolkning_europafodda_procent--by--deso--year",
-      "schema": {
-        "fields": [
-          {
-            "name": "deso"
-          },
-          {
-            "name": "year"
-          },
-          {
-            "name": "befolkning_europafodda_procent"
-          }
-        ],
-        "primaryKey": [
-          "deso",
-          "year"
-        ]
-      }
-    },
-    {
-      "path": "ddf--datapoints--befolkning_sverigefodda_antal--by--deso--year.csv",
-      "name": "befolkning_sverigefodda_antal--by--deso--year",
-      "schema": {
-        "fields": [
-          {
-            "name": "deso"
-          },
-          {
-            "name": "year"
-          },
-          {
-            "name": "befolkning_sverigefodda_antal"
-          }
-        ],
-        "primaryKey": [
-          "deso",
-          "year"
-        ]
-      }
-    },
-    {
-      "path": "ddf--datapoints--befolkning_sverigefodda_procent--by--deso--year.csv",
-      "name": "befolkning_sverigefodda_procent--by--deso--year",
-      "schema": {
-        "fields": [
-          {
-            "name": "deso"
-          },
-          {
-            "name": "year"
-          },
-          {
-            "name": "befolkning_sverigefodda_procent"
-          }
-        ],
-        "primaryKey": [
-          "deso",
-          "year"
-        ]
-      }
-    },
-    {
-      "path": "ddf--datapoints--befolkning_utaneuropafodda_antal--by--deso--year.csv",
-      "name": "befolkning_utaneuropafodda_antal--by--deso--year",
-      "schema": {
-        "fields": [
-          {
-            "name": "deso"
-          },
-          {
-            "name": "year"
-          },
-          {
-            "name": "befolkning_utaneuropafodda_antal"
-          }
-        ],
-        "primaryKey": [
-          "deso",
-          "year"
-        ]
-      }
-    },
-    {
-      "path": "ddf--datapoints--befolkning_utaneuropafodda_procent--by--deso--year.csv",
-      "name": "befolkning_utaneuropafodda_procent--by--deso--year",
-      "schema": {
-        "fields": [
-          {
-            "name": "deso"
-          },
-          {
-            "name": "year"
-          },
-          {
-            "name": "befolkning_utaneuropafodda_procent"
-          }
-        ],
-        "primaryKey": [
-          "deso",
-          "year"
-        ]
-      }
-    },
-    {
-      "path": "ddf--datapoints--ekstand_h_procent--by--deso--year.csv",
-      "name": "ekstand_h_procent--by--deso--year",
-      "schema": {
-        "fields": [
-          {
-            "name": "deso"
-          },
-          {
-            "name": "year"
-          },
-          {
-            "name": "ekstand_h_procent"
-          }
-        ],
-        "primaryKey": [
-          "deso",
-          "year"
-        ]
-      }
-    },
-    {
-      "path": "ddf--datapoints--ekstand_l_procent--by--deso--year.csv",
-      "name": "ekstand_l_procent--by--deso--year",
-      "schema": {
-        "fields": [
-          {
-            "name": "deso"
-          },
-          {
-            "name": "year"
-          },
-          {
-            "name": "ekstand_l_procent"
-          }
-        ],
-        "primaryKey": [
-          "deso",
-          "year"
-        ]
-      }
-    },
-    {
-      "path": "ddf--datapoints--syssel_antal--by--deso--gender--year.csv",
-      "name": "syssel_antal--by--deso--gender--year",
-      "schema": {
-        "fields": [
-          {
-            "name": "deso"
-          },
-          {
-            "name": "gender"
-          },
-          {
-            "name": "year"
-          },
-          {
-            "name": "syssel_antal"
-          }
-        ],
-        "primaryKey": [
-          "deso",
-          "gender",
-          "year"
-        ]
-      }
-    },
-    {
-      "path": "ddf--datapoints--syssel_antal--by--deso--year.csv",
-      "name": "syssel_antal--by--deso--year",
-      "schema": {
-        "fields": [
-          {
-            "name": "deso"
-          },
-          {
-            "name": "year"
-          },
-          {
-            "name": "syssel_antal"
-          }
-        ],
-        "primaryKey": [
-          "deso",
-          "year"
-        ]
-      }
-    },
-    {
-      "path": "ddf--datapoints--syssel_procent--by--deso--gender--year.csv",
-      "name": "syssel_procent--by--deso--gender--year",
-      "schema": {
-        "fields": [
-          {
-            "name": "deso"
-          },
-          {
-            "name": "gender"
-          },
-          {
-            "name": "year"
-          },
-          {
-            "name": "syssel_procent"
-          }
-        ],
-        "primaryKey": [
-          "deso",
-          "gender",
-          "year"
-        ]
-      }
-    },
-    {
-      "path": "ddf--datapoints--syssel_procent--by--deso--year.csv",
-      "name": "syssel_procent--by--deso--year",
-      "schema": {
-        "fields": [
-          {
-            "name": "deso"
-          },
-          {
-            "name": "year"
-          },
-          {
-            "name": "syssel_procent"
-          }
-        ],
-        "primaryKey": [
-          "deso",
-          "year"
-        ]
-      }
-    },
-    {
-      "path": "ddf--datapoints--uppform_aganderatt_antal--by--deso--year.csv",
-      "name": "uppform_aganderatt_antal--by--deso--year",
-      "schema": {
-        "fields": [
-          {
-            "name": "deso"
-          },
-          {
-            "name": "year"
-          },
-          {
-            "name": "uppform_aganderatt_antal"
-          }
-        ],
-        "primaryKey": [
-          "deso",
-          "year"
-        ]
-      }
-    },
-    {
-      "path": "ddf--datapoints--uppform_aganderatt_procent--by--deso--year.csv",
-      "name": "uppform_aganderatt_procent--by--deso--year",
-      "schema": {
-        "fields": [
-          {
-            "name": "deso"
-          },
-          {
-            "name": "year"
-          },
-          {
-            "name": "uppform_aganderatt_procent"
-          }
-        ],
-        "primaryKey": [
-          "deso",
-          "year"
-        ]
-      }
-    },
-    {
-      "path": "ddf--datapoints--uppform_bostadsratt_antal--by--deso--year.csv",
-      "name": "uppform_bostadsratt_antal--by--deso--year",
-      "schema": {
-        "fields": [
-          {
-            "name": "deso"
-          },
-          {
-            "name": "year"
-          },
-          {
-            "name": "uppform_bostadsratt_antal"
-          }
-        ],
-        "primaryKey": [
-          "deso",
-          "year"
-        ]
-      }
-    },
-    {
-      "path": "ddf--datapoints--uppform_bostadsratt_procent--by--deso--year.csv",
-      "name": "uppform_bostadsratt_procent--by--deso--year",
-      "schema": {
-        "fields": [
-          {
-            "name": "deso"
-          },
-          {
-            "name": "year"
-          },
-          {
-            "name": "uppform_bostadsratt_procent"
-          }
-        ],
-        "primaryKey": [
-          "deso",
-          "year"
-        ]
-      }
-    },
-    {
-      "path": "ddf--datapoints--uppform_hyresratt_antal--by--deso--year.csv",
-      "name": "uppform_hyresratt_antal--by--deso--year",
-      "schema": {
-        "fields": [
-          {
-            "name": "deso"
-          },
-          {
-            "name": "year"
-          },
-          {
-            "name": "uppform_hyresratt_antal"
-          }
-        ],
-        "primaryKey": [
-          "deso",
-          "year"
-        ]
-      }
-    },
-    {
-      "path": "ddf--datapoints--uppform_hyresratt_procent--by--deso--year.csv",
-      "name": "uppform_hyresratt_procent--by--deso--year",
-      "schema": {
-        "fields": [
-          {
-            "name": "deso"
-          },
-          {
-            "name": "year"
-          },
-          {
-            "name": "uppform_hyresratt_procent"
-          }
-        ],
-        "primaryKey": [
-          "deso",
-          "year"
-        ]
-      }
-    },
-    {
-      "path": "ddf--datapoints--uppform_uppgiftsaknas_antal--by--deso--year.csv",
-      "name": "uppform_uppgiftsaknas_antal--by--deso--year",
-      "schema": {
-        "fields": [
-          {
-            "name": "deso"
-          },
-          {
-            "name": "year"
-          },
-          {
-            "name": "uppform_uppgiftsaknas_antal"
-          }
-        ],
-        "primaryKey": [
-          "deso",
-          "year"
-        ]
-      }
-    },
-    {
-      "path": "ddf--datapoints--uppform_uppgiftsaknas_procent--by--deso--year.csv",
-      "name": "uppform_uppgiftsaknas_procent--by--deso--year",
-      "schema": {
-        "fields": [
-          {
-            "name": "deso"
-          },
-          {
-            "name": "year"
-          },
-          {
-            "name": "uppform_uppgiftsaknas_procent"
-          }
-        ],
-        "primaryKey": [
-          "deso",
-          "year"
-        ]
-      }
-    },
-    {
-      "path": "ddf--entities--gender.csv",
-      "name": "gender",
-      "schema": {
-        "fields": [
-          {
-            "name": "gender"
-          },
-          {
-            "name": "name"
-          }
-        ],
-        "primaryKey": "gender"
-      }
-    },
-    {
-      "path": "ddf--entities--geo--deso.csv",
-      "name": "geo--deso",
-      "schema": {
-        "fields": [
-          {
-            "name": "deso"
-          },
-          {
-            "name": "name"
-          },
-          {
-            "name": "kommun"
-          },
-          {
-            "name": "region"
-          },
-          {
-            "name": "rike"
-          },
-          {
-            "name": "deso_type"
-          },
-          {
-            "name": "regso"
-          },
-          {
-            "name": "is--deso"
-          }
-        ],
-        "primaryKey": "deso"
-      }
-    },
-    {
-      "path": "ddf--entities--geo--kommun.csv",
-      "name": "geo--kommun",
-      "schema": {
-        "fields": [
-          {
-            "name": "kommun"
-          },
-          {
-            "name": "name"
-          },
-          {
-            "name": "region"
-          },
-          {
-            "name": "rike"
-          },
-          {
-            "name": "is--kommun"
-          }
-        ],
-        "primaryKey": "kommun"
-      }
-    },
-    {
-      "path": "ddf--entities--geo--region.csv",
-      "name": "geo--region",
-      "schema": {
-        "fields": [
-          {
-            "name": "region"
-          },
-          {
-            "name": "name"
-          },
-          {
-            "name": "rike"
-          },
-          {
-            "name": "is--region"
-          }
-        ],
-        "primaryKey": "region"
-      }
-    },
-    {
-      "path": "ddf--entities--geo--regso.csv",
-      "name": "geo--regso",
-      "schema": {
-        "fields": [
-          {
-            "name": "regso"
-          },
-          {
-            "name": "name"
-          },
-          {
-            "name": "kommun"
-          },
-          {
-            "name": "region"
-          },
-          {
-            "name": "rike"
-          },
-          {
-            "name": "is--regso"
-          }
-        ],
-        "primaryKey": "regso"
-      }
-    },
-    {
-      "path": "ddf--entities--geo--rike.csv",
-      "name": "geo--rike",
-      "schema": {
-        "fields": [
-          {
-            "name": "rike"
-          },
-          {
-            "name": "name"
-          },
-          {
-            "name": "is--rike"
-          }
-        ],
-        "primaryKey": "rike"
-      }
-    },
-    {
-      "path": "ddf--entities--tag.csv",
-      "name": "tag",
-      "schema": {
-        "fields": [
-          {
-            "name": "tag"
-          },
-          {
-            "name": "name"
-          },
-          {
-            "name": "parent"
-          }
-        ],
-        "primaryKey": "tag"
-      }
+        "synonyms": []
     }
-  ],
-  "ddfSchema": {
-    "datapoints": [
-      {
-        "primaryKey": [
-          "deso",
-          "gender",
-          "year"
-        ],
-        "value": "syssel_antal",
-        "resources": [
-          "syssel_antal--by--deso--gender--year"
-        ]
-      },
-      {
-        "primaryKey": [
-          "deso",
-          "gender",
-          "year"
-        ],
-        "value": "syssel_procent",
-        "resources": [
-          "syssel_procent--by--deso--gender--year"
-        ]
-      },
-      {
-        "primaryKey": [
-          "deso",
-          "year"
-        ],
-        "value": "befolkning",
-        "resources": [
-          "befolkning--by--deso--year"
-        ]
-      },
-      {
-        "primaryKey": [
-          "deso",
-          "year"
-        ],
-        "value": "befolkning_20_64",
-        "resources": [
-          "befolkning_20_64--by--deso--year"
-        ]
-      },
-      {
-        "primaryKey": [
-          "deso",
-          "year"
-        ],
-        "value": "befolkning_europafodda_antal",
-        "resources": [
-          "befolkning_europafodda_antal--by--deso--year"
-        ]
-      },
-      {
-        "primaryKey": [
-          "deso",
-          "year"
-        ],
-        "value": "befolkning_europafodda_procent",
-        "resources": [
-          "befolkning_europafodda_procent--by--deso--year"
-        ]
-      },
-      {
-        "primaryKey": [
-          "deso",
-          "year"
-        ],
-        "value": "befolkning_sverigefodda_antal",
-        "resources": [
-          "befolkning_sverigefodda_antal--by--deso--year"
-        ]
-      },
-      {
-        "primaryKey": [
-          "deso",
-          "year"
-        ],
-        "value": "befolkning_sverigefodda_procent",
-        "resources": [
-          "befolkning_sverigefodda_procent--by--deso--year"
-        ]
-      },
-      {
-        "primaryKey": [
-          "deso",
-          "year"
-        ],
-        "value": "befolkning_utaneuropafodda_antal",
-        "resources": [
-          "befolkning_utaneuropafodda_antal--by--deso--year"
-        ]
-      },
-      {
-        "primaryKey": [
-          "deso",
-          "year"
-        ],
-        "value": "befolkning_utaneuropafodda_procent",
-        "resources": [
-          "befolkning_utaneuropafodda_procent--by--deso--year"
-        ]
-      },
-      {
-        "primaryKey": [
-          "deso",
-          "year"
-        ],
-        "value": "ekstand_h_procent",
-        "resources": [
-          "ekstand_h_procent--by--deso--year"
-        ]
-      },
-      {
-        "primaryKey": [
-          "deso",
-          "year"
-        ],
-        "value": "ekstand_l_procent",
-        "resources": [
-          "ekstand_l_procent--by--deso--year"
-        ]
-      },
-      {
-        "primaryKey": [
-          "deso",
-          "year"
-        ],
-        "value": "syssel_antal",
-        "resources": [
-          "syssel_antal--by--deso--year"
-        ]
-      },
-      {
-        "primaryKey": [
-          "deso",
-          "year"
-        ],
-        "value": "syssel_procent",
-        "resources": [
-          "syssel_procent--by--deso--year"
-        ]
-      },
-      {
-        "primaryKey": [
-          "deso",
-          "year"
-        ],
-        "value": "uppform_aganderatt_antal",
-        "resources": [
-          "uppform_aganderatt_antal--by--deso--year"
-        ]
-      },
-      {
-        "primaryKey": [
-          "deso",
-          "year"
-        ],
-        "value": "uppform_aganderatt_procent",
-        "resources": [
-          "uppform_aganderatt_procent--by--deso--year"
-        ]
-      },
-      {
-        "primaryKey": [
-          "deso",
-          "year"
-        ],
-        "value": "uppform_bostadsratt_antal",
-        "resources": [
-          "uppform_bostadsratt_antal--by--deso--year"
-        ]
-      },
-      {
-        "primaryKey": [
-          "deso",
-          "year"
-        ],
-        "value": "uppform_bostadsratt_procent",
-        "resources": [
-          "uppform_bostadsratt_procent--by--deso--year"
-        ]
-      },
-      {
-        "primaryKey": [
-          "deso",
-          "year"
-        ],
-        "value": "uppform_hyresratt_antal",
-        "resources": [
-          "uppform_hyresratt_antal--by--deso--year"
-        ]
-      },
-      {
-        "primaryKey": [
-          "deso",
-          "year"
-        ],
-        "value": "uppform_hyresratt_procent",
-        "resources": [
-          "uppform_hyresratt_procent--by--deso--year"
-        ]
-      },
-      {
-        "primaryKey": [
-          "deso",
-          "year"
-        ],
-        "value": "uppform_uppgiftsaknas_antal",
-        "resources": [
-          "uppform_uppgiftsaknas_antal--by--deso--year"
-        ]
-      },
-      {
-        "primaryKey": [
-          "deso",
-          "year"
-        ],
-        "value": "uppform_uppgiftsaknas_procent",
-        "resources": [
-          "uppform_uppgiftsaknas_procent--by--deso--year"
-        ]
-      },
-      {
-        "primaryKey": [
-          "gender",
-          "geo",
-          "year"
-        ],
-        "value": "syssel_antal",
-        "resources": [
-          "syssel_antal--by--deso--gender--year"
-        ]
-      },
-      {
-        "primaryKey": [
-          "gender",
-          "geo",
-          "year"
-        ],
-        "value": "syssel_procent",
-        "resources": [
-          "syssel_procent--by--deso--gender--year"
-        ]
-      },
-      {
-        "primaryKey": [
-          "geo",
-          "year"
-        ],
-        "value": "befolkning",
-        "resources": [
-          "befolkning--by--deso--year"
-        ]
-      },
-      {
-        "primaryKey": [
-          "geo",
-          "year"
-        ],
-        "value": "befolkning_20_64",
-        "resources": [
-          "befolkning_20_64--by--deso--year"
-        ]
-      },
-      {
-        "primaryKey": [
-          "geo",
-          "year"
-        ],
-        "value": "befolkning_europafodda_antal",
-        "resources": [
-          "befolkning_europafodda_antal--by--deso--year"
-        ]
-      },
-      {
-        "primaryKey": [
-          "geo",
-          "year"
-        ],
-        "value": "befolkning_europafodda_procent",
-        "resources": [
-          "befolkning_europafodda_procent--by--deso--year"
-        ]
-      },
-      {
-        "primaryKey": [
-          "geo",
-          "year"
-        ],
-        "value": "befolkning_sverigefodda_antal",
-        "resources": [
-          "befolkning_sverigefodda_antal--by--deso--year"
-        ]
-      },
-      {
-        "primaryKey": [
-          "geo",
-          "year"
-        ],
-        "value": "befolkning_sverigefodda_procent",
-        "resources": [
-          "befolkning_sverigefodda_procent--by--deso--year"
-        ]
-      },
-      {
-        "primaryKey": [
-          "geo",
-          "year"
-        ],
-        "value": "befolkning_utaneuropafodda_antal",
-        "resources": [
-          "befolkning_utaneuropafodda_antal--by--deso--year"
-        ]
-      },
-      {
-        "primaryKey": [
-          "geo",
-          "year"
-        ],
-        "value": "befolkning_utaneuropafodda_procent",
-        "resources": [
-          "befolkning_utaneuropafodda_procent--by--deso--year"
-        ]
-      },
-      {
-        "primaryKey": [
-          "geo",
-          "year"
-        ],
-        "value": "ekstand_h_procent",
-        "resources": [
-          "ekstand_h_procent--by--deso--year"
-        ]
-      },
-      {
-        "primaryKey": [
-          "geo",
-          "year"
-        ],
-        "value": "ekstand_l_procent",
-        "resources": [
-          "ekstand_l_procent--by--deso--year"
-        ]
-      },
-      {
-        "primaryKey": [
-          "geo",
-          "year"
-        ],
-        "value": "syssel_antal",
-        "resources": [
-          "syssel_antal--by--deso--year"
-        ]
-      },
-      {
-        "primaryKey": [
-          "geo",
-          "year"
-        ],
-        "value": "syssel_procent",
-        "resources": [
-          "syssel_procent--by--deso--year"
-        ]
-      },
-      {
-        "primaryKey": [
-          "geo",
-          "year"
-        ],
-        "value": "uppform_aganderatt_antal",
-        "resources": [
-          "uppform_aganderatt_antal--by--deso--year"
-        ]
-      },
-      {
-        "primaryKey": [
-          "geo",
-          "year"
-        ],
-        "value": "uppform_aganderatt_procent",
-        "resources": [
-          "uppform_aganderatt_procent--by--deso--year"
-        ]
-      },
-      {
-        "primaryKey": [
-          "geo",
-          "year"
-        ],
-        "value": "uppform_bostadsratt_antal",
-        "resources": [
-          "uppform_bostadsratt_antal--by--deso--year"
-        ]
-      },
-      {
-        "primaryKey": [
-          "geo",
-          "year"
-        ],
-        "value": "uppform_bostadsratt_procent",
-        "resources": [
-          "uppform_bostadsratt_procent--by--deso--year"
-        ]
-      },
-      {
-        "primaryKey": [
-          "geo",
-          "year"
-        ],
-        "value": "uppform_hyresratt_antal",
-        "resources": [
-          "uppform_hyresratt_antal--by--deso--year"
-        ]
-      },
-      {
-        "primaryKey": [
-          "geo",
-          "year"
-        ],
-        "value": "uppform_hyresratt_procent",
-        "resources": [
-          "uppform_hyresratt_procent--by--deso--year"
-        ]
-      },
-      {
-        "primaryKey": [
-          "geo",
-          "year"
-        ],
-        "value": "uppform_uppgiftsaknas_antal",
-        "resources": [
-          "uppform_uppgiftsaknas_antal--by--deso--year"
-        ]
-      },
-      {
-        "primaryKey": [
-          "geo",
-          "year"
-        ],
-        "value": "uppform_uppgiftsaknas_procent",
-        "resources": [
-          "uppform_uppgiftsaknas_procent--by--deso--year"
-        ]
-      }
-    ],
-    "entities": [
-      {
-        "primaryKey": [
-          "deso"
-        ],
-        "value": "deso_type",
-        "resources": [
-          "geo--deso"
-        ]
-      },
-      {
-        "primaryKey": [
-          "deso"
-        ],
-        "value": "is--deso",
-        "resources": [
-          "geo--deso"
-        ]
-      },
-      {
-        "primaryKey": [
-          "deso"
-        ],
-        "value": "kommun",
-        "resources": [
-          "geo--deso"
-        ]
-      },
-      {
-        "primaryKey": [
-          "deso"
-        ],
-        "value": "name",
-        "resources": [
-          "geo--deso"
-        ]
-      },
-      {
-        "primaryKey": [
-          "deso"
-        ],
-        "value": "region",
-        "resources": [
-          "geo--deso"
-        ]
-      },
-      {
-        "primaryKey": [
-          "deso"
-        ],
-        "value": "regso",
-        "resources": [
-          "geo--deso"
-        ]
-      },
-      {
-        "primaryKey": [
-          "deso"
-        ],
-        "value": "rike",
-        "resources": [
-          "geo--deso"
-        ]
-      },
-      {
-        "primaryKey": [
-          "gender"
-        ],
-        "value": "name",
-        "resources": [
-          "gender"
-        ]
-      },
-      {
-        "primaryKey": [
-          "geo"
-        ],
-        "value": "deso_type",
-        "resources": [
-          "geo--deso"
-        ]
-      },
-      {
-        "primaryKey": [
-          "geo"
-        ],
-        "value": "is--deso",
-        "resources": [
-          "geo--deso"
-        ]
-      },
-      {
-        "primaryKey": [
-          "geo"
-        ],
-        "value": "is--kommun",
-        "resources": [
-          "geo--kommun"
-        ]
-      },
-      {
-        "primaryKey": [
-          "geo"
-        ],
-        "value": "is--region",
-        "resources": [
-          "geo--region"
-        ]
-      },
-      {
-        "primaryKey": [
-          "geo"
-        ],
-        "value": "is--regso",
-        "resources": [
-          "geo--regso"
-        ]
-      },
-      {
-        "primaryKey": [
-          "geo"
-        ],
-        "value": "is--rike",
-        "resources": [
-          "geo--rike"
-        ]
-      },
-      {
-        "primaryKey": [
-          "geo"
-        ],
-        "value": "kommun",
-        "resources": [
-          "geo--deso",
-          "geo--regso"
-        ]
-      },
-      {
-        "primaryKey": [
-          "geo"
-        ],
-        "value": "name",
-        "resources": [
-          "geo--deso",
-          "geo--kommun",
-          "geo--region",
-          "geo--regso",
-          "geo--rike"
-        ]
-      },
-      {
-        "primaryKey": [
-          "geo"
-        ],
-        "value": "region",
-        "resources": [
-          "geo--deso",
-          "geo--kommun",
-          "geo--regso"
-        ]
-      },
-      {
-        "primaryKey": [
-          "geo"
-        ],
-        "value": "regso",
-        "resources": [
-          "geo--deso"
-        ]
-      },
-      {
-        "primaryKey": [
-          "geo"
-        ],
-        "value": "rike",
-        "resources": [
-          "geo--deso",
-          "geo--kommun",
-          "geo--region",
-          "geo--regso"
-        ]
-      },
-      {
-        "primaryKey": [
-          "kommun"
-        ],
-        "value": "is--kommun",
-        "resources": [
-          "geo--kommun"
-        ]
-      },
-      {
-        "primaryKey": [
-          "kommun"
-        ],
-        "value": "name",
-        "resources": [
-          "geo--kommun"
-        ]
-      },
-      {
-        "primaryKey": [
-          "kommun"
-        ],
-        "value": "region",
-        "resources": [
-          "geo--kommun"
-        ]
-      },
-      {
-        "primaryKey": [
-          "kommun"
-        ],
-        "value": "rike",
-        "resources": [
-          "geo--kommun"
-        ]
-      },
-      {
-        "primaryKey": [
-          "region"
-        ],
-        "value": "is--region",
-        "resources": [
-          "geo--region"
-        ]
-      },
-      {
-        "primaryKey": [
-          "region"
-        ],
-        "value": "name",
-        "resources": [
-          "geo--region"
-        ]
-      },
-      {
-        "primaryKey": [
-          "region"
-        ],
-        "value": "rike",
-        "resources": [
-          "geo--region"
-        ]
-      },
-      {
-        "primaryKey": [
-          "regso"
-        ],
-        "value": "is--regso",
-        "resources": [
-          "geo--regso"
-        ]
-      },
-      {
-        "primaryKey": [
-          "regso"
-        ],
-        "value": "kommun",
-        "resources": [
-          "geo--regso"
-        ]
-      },
-      {
-        "primaryKey": [
-          "regso"
-        ],
-        "value": "name",
-        "resources": [
-          "geo--regso"
-        ]
-      },
-      {
-        "primaryKey": [
-          "regso"
-        ],
-        "value": "region",
-        "resources": [
-          "geo--regso"
-        ]
-      },
-      {
-        "primaryKey": [
-          "regso"
-        ],
-        "value": "rike",
-        "resources": [
-          "geo--regso"
-        ]
-      },
-      {
-        "primaryKey": [
-          "rike"
-        ],
-        "value": "is--rike",
-        "resources": [
-          "geo--rike"
-        ]
-      },
-      {
-        "primaryKey": [
-          "rike"
-        ],
-        "value": "name",
-        "resources": [
-          "geo--rike"
-        ]
-      },
-      {
-        "primaryKey": [
-          "tag"
-        ],
-        "value": "name",
-        "resources": [
-          "tag"
-        ]
-      },
-      {
-        "primaryKey": [
-          "tag"
-        ],
-        "value": "parent",
-        "resources": [
-          "tag"
-        ]
-      }
-    ],
-    "concepts": [
-      {
-        "primaryKey": [
-          "concept"
-        ],
-        "value": "concept_type",
-        "resources": [
-          "ddf--concepts"
-        ]
-      },
-      {
-        "primaryKey": [
-          "concept"
-        ],
-        "value": "description",
-        "resources": [
-          "ddf--concepts"
-        ]
-      },
-      {
-        "primaryKey": [
-          "concept"
-        ],
-        "value": "domain",
-        "resources": [
-          "ddf--concepts"
-        ]
-      },
-      {
-        "primaryKey": [
-          "concept"
-        ],
-        "value": "drill_up",
-        "resources": [
-          "ddf--concepts"
-        ]
-      },
-      {
-        "primaryKey": [
-          "concept"
-        ],
-        "value": "name",
-        "resources": [
-          "ddf--concepts"
-        ]
-      },
-      {
-        "primaryKey": [
-          "concept"
-        ],
-        "value": "tags",
-        "resources": [
-          "ddf--concepts"
-        ]
-      }
-    ],
-    "synonyms": []
-  }
 }
