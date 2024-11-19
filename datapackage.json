@@ -3,7 +3,7 @@
         "name": "English",
         "id": "en-US"
     },
-    "created": "2024-10-30T21:35:08.938Z",
+    "created": "2024-11-19T20:51:22.254Z",
     "resources": [
         {
             "name": "ddf--concepts",
@@ -21,6 +21,15 @@
                     },
                     {
                         "name": "name"
+                    },
+                    {
+                        "name": "name_short"
+                    },
+                    {
+                        "name": "name_catalog"
+                    },
+                    {
+                        "name": "format"
                     },
                     {
                         "name": "description"
@@ -1798,7 +1807,34 @@
                 "primaryKey": [
                     "concept"
                 ],
+                "value": "format",
+                "resources": [
+                    "ddf--concepts"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "concept"
+                ],
                 "value": "name",
+                "resources": [
+                    "ddf--concepts"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "concept"
+                ],
+                "value": "name_catalog",
+                "resources": [
+                    "ddf--concepts"
+                ]
+            },
+            {
+                "primaryKey": [
+                    "concept"
+                ],
+                "value": "name_short",
                 "resources": [
                     "ddf--concepts"
                 ]
