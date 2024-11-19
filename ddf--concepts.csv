@@ -19,24 +19,24 @@ scales,string,,,,,,,,
 format,string,,,,,,,,
 name_short,string,,,,,,,,
 name_catalog,string,,,,,,,,
-ekstand_l_procent,measure,,"Låg ekonomisk standard, procent",,,percent,20-64 år. KÄLLA: SCB,,"ekonomi,_root"
-ekstand_h_procent,measure,,"Hög ekonomisk standard, procent",,,percent,20-64 år. KÄLLA: SCB,,ekonomi
+ekstand_l_procent,measure,,"Låg ekonomisk standard, procent",Låg ekonomisk standard,"Låg ekonomisk standard, %",percent,20-64 år. KÄLLA: SCB,,"ekonomi,_root"
+ekstand_h_procent,measure,,"Hög ekonomisk standard, procent",Hög ekonomisk standard,"Hög ekonomisk standard, %",percent,20-64 år. KÄLLA: SCB,,ekonomi
 befolkning_20_65,measure,,Antal personer 20-65 år,,,,Från sysselsättning tabell. Finns könsindelad data. KÄLLA: SCB,,"ekonomi,befolk"
 befolkning_20_64,measure,,Antal personer 20-64 år,,,,Från ekonomisk standard tabell. KÄLLA: SCB,,"ekonomi,befolk"
 syssel_procent,measure,,Procent sysselsatta (20-65 år),Procent sysselsatta,Procent sysselsatta,percent,20-65 år. Finns könsindelad data. KÄLLA: SCB,,ekonomi
 syssel_antal,measure,,Antal sysselsatta (20-65 år),Antal sysselsatta,Antal sysselsatta,,20-65 år. Finns könsindelad data. KÄLLA: SCB,,ekonomi
 befolkning,measure,,Folkmängd totalt,,,,Befolkning totalt. KÄLLA: SCB,,"befolk,_root"
-befolkning_sverigefodda_antal,measure,,"Sverigefödda, antal","Sverigefödda, antal",,,KÄLLA: SCB,,befolk
-befolkning_sverigefodda_procent,measure,,"Sverigefödda, procent","Sverigefödda, procent",,percent,KÄLLA: SCB,,befolk
-befolkning_europafodda_antal,measure,,"Europafödda, antal","Europafödda, antal",,,Utanför Sverige. KÄLLA: SCB,,befolk
-befolkning_europafodda_procent,measure,,"Europafödda, procent","Europafödda, procent",,percent,Utanför Sverige. KÄLLA: SCB,,befolk
-befolkning_utaneuropafodda_antal,measure,,"Födda utanför Europa, antal","Födda utanför Europa, antal",,,Inkl uppgift saknas. KÄLLA: SCB,,befolk
-befolkning_utaneuropafodda_procent,measure,,"Födda utanför Europa, procent","Födda utanför Europa, procent",,percent,Inkl uppgift saknas. KÄLLA: SCB,,"befolk,_root"
-uppform_aganderatt_antal,measure,,"Bor i äganderätt, antal",Bor i äganderätt,"Äganderätt, antal",,Folkmängd efter upplåtelseform. KÄLLA: SCB,,uppform
-uppform_bostadsratt_antal,measure,,"Bor i bostadsrätt, antal",Bor i bostadsrätt,"Bostadsrätt, antal",,Folkmängd efter upplåtelseform. KÄLLA: SCB,,uppform
-uppform_hyresratt_antal,measure,,"Bor i hyresrätt, antal",Bor i hyresrätt,"Hyresrätt, antal",,Folkmängd efter upplåtelseform. KÄLLA: SCB,,uppform
-uppform_uppgiftsaknas_antal,measure,,"Bor i okänd upplåtelseform, antal",Bor i okänd upplåtelseform,"Okänd upplåtelseform, antal",,Folkmängd efter upplåtelseform. KÄLLA: SCB,,uppform
-uppform_aganderatt_procent,measure,,"Bor i äganderätt, procent",Bor i äganderätt,"Äganderätt, procent",percent,Folkmängd efter upplåtelseform. KÄLLA: SCB,,uppform
-uppform_bostadsratt_procent,measure,,"Bor i bostadsrätt, procent",Bor i bostadsrätt,"Bostadsrätt, procent",percent,Folkmängd efter upplåtelseform. KÄLLA: SCB,,uppform
-uppform_hyresratt_procent,measure,,"Bor i hyresrätt, procent",Bor i hyresrätt,"Hyresrätt, procent",percent,Folkmängd efter upplåtelseform. KÄLLA: SCB,,"uppform,_root"
-uppform_uppgiftsaknas_procent,measure,,"Bor i okänd upplåtelseform, procent",Bor i okänd upplåtelseform,"Okänd upplåtelseform, procent",percent,Folkmängd efter upplåtelseform. KÄLLA: SCB,,uppform
+befolkning_sverigefodda_antal,measure,,"Sverigefödda, antal",Sverigefödda,"Sverigefödda, antal",,KÄLLA: SCB,,befolk
+befolkning_sverigefodda_procent,measure,,"Sverigefödda, procent",Sverigefödda,"Sverigefödda, %",percent,KÄLLA: SCB,,befolk
+befolkning_europafodda_antal,measure,,"Europafödda, antal",Europafödda,"Europafödda, antal",,Utanför Sverige. KÄLLA: SCB,,befolk
+befolkning_europafodda_procent,measure,,"Europafödda, procent",Europafödda,"Europafödda, %",percent,Utanför Sverige. KÄLLA: SCB,,befolk
+befolkning_utaneuropafodda_antal,measure,,"Födda utanför Europa, antal",Födda utanför Europa,"Födda utanför Europa, antal",,Inkl uppgift saknas. KÄLLA: SCB,,befolk
+befolkning_utaneuropafodda_procent,measure,,"Födda utanför Europa, procent",Födda utanför Europa,"Födda utanför Europa, %",percent,Inkl uppgift saknas. KÄLLA: SCB,,"befolk,_root"
+uppform_aganderatt_antal,measure,,"Bor i äganderätt, antal personer",Bor i äganderätt,"Äganderätt, antal",,Folkmängd efter upplåtelseform. KÄLLA: SCB,,uppform
+uppform_bostadsratt_antal,measure,,"Bor i bostadsrätt, antal personer",Bor i bostadsrätt,"Bostadsrätt, antal",,Folkmängd efter upplåtelseform. KÄLLA: SCB,,uppform
+uppform_hyresratt_antal,measure,,"Bor i hyresrätt, antal personer",Bor i hyresrätt,"Hyresrätt, antal",,Folkmängd efter upplåtelseform. KÄLLA: SCB,,uppform
+uppform_uppgiftsaknas_antal,measure,,"Bor i okänd upplåtelseform, antal personer",Bor i okänd upplåtelseform,"Okänd upplåtelseform, antal",,Folkmängd efter upplåtelseform. KÄLLA: SCB,,uppform
+uppform_aganderatt_procent,measure,,"Bor i äganderätt, procent",Bor i äganderätt,"Äganderätt, %",percent,Folkmängd efter upplåtelseform. KÄLLA: SCB,,uppform
+uppform_bostadsratt_procent,measure,,"Bor i bostadsrätt, procent",Bor i bostadsrätt,"Bostadsrätt, %",percent,Folkmängd efter upplåtelseform. KÄLLA: SCB,,uppform
+uppform_hyresratt_procent,measure,,"Bor i hyresrätt, procent",Bor i hyresrätt,"Hyresrätt, %",percent,Folkmängd efter upplåtelseform. KÄLLA: SCB,,"uppform,_root"
+uppform_uppgiftsaknas_procent,measure,,"Bor i okänd upplåtelseform, procent",Bor i okänd upplåtelseform,"Okänd upplåtelseform, %",percent,Folkmängd efter upplåtelseform. KÄLLA: SCB,,uppform
